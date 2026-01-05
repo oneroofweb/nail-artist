@@ -1,4 +1,46 @@
 
+// =================== Navbar section ===================
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. SCROLL SPY (Highlight Navbar Links on Scroll)
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // -100 offset for fixed navbar height
+            if (pageYOffset >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(li => {
+            li.classList.remove('active');
+            if (li.getAttribute('href').includes(current)) {
+                li.classList.add('active');
+            }
+        });
+    });
+
+    // 2. CLOSE MOBILE MENU ON CLICK
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navItems = document.querySelectorAll('.nav-link, .btn-primary'); // Links + Book Button
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Check if mobile menu is open
+            if (navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
+        });
+    });
+
+});
+
 // ================================= Service Read More ==================================
 document.addEventListener('DOMContentLoaded', function() {
     
