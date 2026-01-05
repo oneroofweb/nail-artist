@@ -301,3 +301,64 @@ section {
     display: block; /* Removes extra space below inline elements */
     filter: grayscale(20%) contrast(1.1); /* Subtle artistic filter for map */
 }
+
+/* ========================
+   FOOTER SECTION STYLES
+   ======================== */
+
+.bg-dark {
+    background-color: #2b2b2b !important; /* Softer charcoal than pure black */
+}
+
+/* Social Buttons */
+.social-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Footer Links */
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover, .hover-gold:hover {
+    color: var(--primary-color) !important;
+    padding-left: 5px; /* Subtle slide effect */
+}
+
+/* Form Input adjustments for Dark BG */
+.footer-section .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.footer-section .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-section .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
