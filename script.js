@@ -51,3 +51,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+// --- LIGHTBOX FUNCTIONALITY ---
+function openLightbox(element) {
+    // 1. Get the image source from the clicked element
+    const imgElement = element.querySelector('img');
+    const imgSrc = imgElement.src;
+
+    // 2. Set the modal image source
+    const lightboxImage = document.getElementById('lightboxImage');
+    lightboxImage.src = imgSrc;
+
+    // 3. Open the Bootstrap Modal
+    const myModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+    myModal.show();
+}

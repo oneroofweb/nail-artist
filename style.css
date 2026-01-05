@@ -158,3 +158,146 @@ section {
     color: var(--accent-color) !important;
     padding-left: 5px !important;
 }
+/* ========================
+   ABOUT SECTION STYLES
+   ======================== */
+
+/* Frame behind the image */
+.about-frame {
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    left: 20px; /* Moves it slightly to the right/bottom */
+    border-width: 2px !important;
+}
+
+/* Floating Experience Badge */
+.experience-badge {
+    bottom: -20px;
+    left: -20px;
+    min-width: 140px;
+    border: 1px solid rgba(0,0,0,0.05);
+    animation: floatBadge 3s ease-in-out infinite alternate;
+}
+
+/* Font Consistency */
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.ls-1 {
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+}
+
+/* Badge Animation */
+@keyframes floatBadge {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991px) {
+    .about-frame {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .experience-badge {
+        bottom: -10px;
+        left: 0;
+    }
+}
+
+/* ========================
+   GALLERY SECTION STYLES
+   ======================== */
+
+.gallery-item {
+    height: 300px; /* Fixed height for uniform grid */
+    cursor: pointer;
+}
+
+.gallery-img {
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect: Zoom Image + Show Overlay */
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(212, 163, 115, 0.6); /* Rose Gold transparent overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Lightbox Close Button visibility */
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    z-index: 1056;
+}
+
+/* ========================
+   CONTACT SECTION STYLES
+   ======================== */
+
+.hover-accent:hover {
+    color: var(--primary-color) !important;
+    transition: color 0.3s ease;
+}
+
+/* Icon Styling */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color); /* Pale Pink Background */
+    border-radius: 50%;
+}
+
+/* Form Input Styling */
+.form-control, .form-select {
+    border: 1px solid #eee;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    padding: 1rem 0.75rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color); /* Rose Gold Border */
+    box-shadow: 0 0 0 0.25rem rgba(212, 163, 115, 0.15); /* Soft Glow */
+    background-color: #fff;
+}
+
+/* Floating Label Adjustment */
+.form-floating > label {
+    color: #999;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+    color: var(--primary-color);
+}
+
+/* Map Container */
+.map-container iframe {
+    display: block; /* Removes extra space below inline elements */
+    filter: grayscale(20%) contrast(1.1); /* Subtle artistic filter for map */
+}
